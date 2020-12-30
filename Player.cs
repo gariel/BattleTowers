@@ -22,7 +22,7 @@ namespace BattleTowers
 			}
 		}
 
-		private ITower? _tower;
+		private ITower _tower;
 		private bool _facingLeft;
 		private bool _attacking;
 		private List<(DateTime, Attack)> AttacksForCombo;
