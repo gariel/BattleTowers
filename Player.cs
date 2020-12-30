@@ -1,63 +1,105 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using Godot;
 
-public class Player : Position2D
+namespace BattleTowers
 {
-	public int CurrentLife { get; set; }
-	public int FullLife => _tower?.Life ?? 100;
-	public string Description => _tower?.Description ?? "";
-	
-	[Export]
-	public bool FacingLeft
+	public class Player : Position2D
 	{
-		get => _facingLeft;
-		set
+		public int CurrentLife { get; set; }
+		public int FullLife => _tower?.Life ?? 100;
+		public string Description => _tower?.Description ?? "";
+	
+		[Export]
+		public bool FacingLeft
 		{
-			_facingLeft = value;
-			Scale = new Vector2(value ? -1 : 1, 1);
+			get => _facingLeft;
+			set
+			{
+				_facingLeft = value;
+				Scale = new Vector2(value ? -1 : 1, 1);
+			}
 		}
-	}
 
-	private bool Initialized => _tower != null;
+		private ITower? _tower;
+		private bool _facingLeft;
+		private bool _attacking;
+		private List<(DateTime, Attack)> AttacksForCombo;
 
-	private Tower _tower;
-	private bool _facingLeft;
-	private bool _attacking;
+		public Player()
+		{
+			AttacksForCombo = new List<(DateTime, Attack)>();
+		}
 
-	public void Initialize(Node playable)
-	{
-		AddChild(playable);
-		_tower = (Tower) playable;
-		_tower.Anim.Play("idle");
-		_tower.Anim.Connect("animation_finished", this, nameof(AnimationFinished));
-	}
+		public void Initialize(Node playable)
+		{
+			AddChild(playable);
+			_tower = (ITower) playable;
+			_tower.Anim.Play("idle");
+			_tower.Anim.Connect("animation_finished", this, nameof(AnimationFinished));
+		}
 	
-	public override void _Ready()
-	{
-	}
+		public override void _Ready()
+		{
+		}
 	
-	public void Walk()
-	{
-		if (Initialized || _attacking) return;
-		_tower.Anim.Play("walk");
-	}
+		public void Walk()
+		{
+			if (_attacking) return;
+			_tower?.Anim.Play("walk");
+		}
 	
-	public void Jump()
-	{
-		if (Initialized || _attacking) return;
-		_tower.Anim.Play("jump");
-	}
+		public void Jump()
+		{
+			if (_attacking) return;
+			_tower?.Anim.Play("jump");
+		}
 
-	public void Attack(Attacks attack)
-	{
-		if (Initialized || _attacking) return;
-		_attacking = true;
-		_tower.Anim.Stop();
-		_tower.Anim.Play(attack.ToString().ToLower());
-	}
+		public void Attack(Attack attack)
+		{
+			if (_tower == null || _attacking)
+				return;
+			
+			// arruma a lista de ataques
+			AttacksForCombo.Add((DateTime.Now, attack));
+			var limit = DateTime.Now - TimeSpan.FromSeconds(2);
+			
+			while (AttacksForCombo.Count > 0)
+			{
+				var (date, _) = AttacksForCombo.FirstOrDefault();
+				if (date.CompareTo(limit) == -1)
+					AttacksForCombo.RemoveAt(0);
+				else
+					break;
+			}
+			
+			// acha se fez algum combo
+			var invoke = attack.ToString().ToLower();
+			foreach (var combo in _tower.Combos)
+			{
+				var activationCount = combo.Activation.Length;
+				var activator = AttacksForCombo
+					.Skip(AttacksForCombo.Count - activationCount)
+					.Select(i => i.Item2);
 
-	public void AnimationFinished(string name)
-	{
-		_attacking = false;
-		_tower.Anim.Play("idle");
+				if (activator.SequenceEqual(combo.Activation))
+				{
+					invoke = combo.Key;
+					AttacksForCombo.Clear();
+					break;
+				}
+			}
+			
+			_attacking = true;
+			_tower.Anim.Stop();
+			_tower.Anim.Play(invoke);
+		}
+
+		public void AnimationFinished(string name)
+		{
+			_attacking = false;
+			_tower?.Anim.Play("idle");
+		}
 	}
 }
