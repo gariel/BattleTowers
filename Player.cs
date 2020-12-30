@@ -61,7 +61,7 @@ namespace BattleTowers
 			if (_tower == null || _attacking)
 				return;
 			
-			// arruma a lista de ataques
+			// sanitize combo attacks
 			AttacksForCombo.Add((DateTime.Now, attack));
 			var limit = DateTime.Now - TimeSpan.FromSeconds(2);
 			
@@ -74,7 +74,7 @@ namespace BattleTowers
 					break;
 			}
 			
-			// acha se fez algum combo
+			// match combos
 			var invoke = attack.ToString().ToLower();
 			foreach (var combo in _tower.Combos)
 			{

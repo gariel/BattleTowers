@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/torre_eifell_normal.png-aca8f1a09675369249cf50d8a0d5b7c7.stex"
+path="res://.import/torre_eifell_front.png-7c46055e9bf24b830fe4c9fbc5197647.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/torre_eifell_normal.png"
-dest_files=[ "res://.import/torre_eifell_normal.png-aca8f1a09675369249cf50d8a0d5b7c7.stex" ]
+source_file="res://assets/images/eiffell/torre_eifell_front.png"
+dest_files=[ "res://.import/torre_eifell_front.png-7c46055e9bf24b830fe4c9fbc5197647.stex" ]
 
 [params]
 
