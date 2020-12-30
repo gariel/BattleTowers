@@ -4,8 +4,8 @@ namespace BattleTowers
 {
 	public class Game : Node2D
 	{
-		private Player _player1;
-		private Player _player2;
+		private Player? _player1;
+		private Player? _player2;
 
 		public override void _Ready()
 		{
@@ -30,20 +30,20 @@ namespace BattleTowers
 			if (Input.IsKeyPressed((int) KeyList.D))
 				movement += 300;
 		
-			var kinematic1 = _player1.GetChild<KinematicBody2D>(0);
-			kinematic1.MoveAndCollide(new Vector2(movement * delta, 0));
+			var kinematic1 = _player1?.GetChild<KinematicBody2D>(0);
+			kinematic1?.MoveAndCollide(new Vector2(movement * delta, 0));
 
 			if (movement != 0)
-				_player1.Walk();
+				_player1?.Walk();
 
 		
 			if (Input.IsKeyPressed((int) KeyList.O))
 			{
-				_player1.Attack(Attack.Punch);
+				_player1?.Attack(Attack.Punch);
 			}
 			if (Input.IsKeyPressed((int) KeyList.P))
 			{
-				_player1.Attack(Attack.Kick);
+				_player1?.Attack(Attack.Kick);
 			}
 		}
 	}
