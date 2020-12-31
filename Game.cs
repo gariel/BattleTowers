@@ -10,12 +10,13 @@ namespace BattleTowers
 		public override void _Ready()
 		{
 			var eifel = ResourceLoader.Load<PackedScene>("res://Towers/TorreEiffel.tscn");
+			var redentor = ResourceLoader.Load<PackedScene>("res://Towers/CristoRedentor.tscn");
 
 			_player1 = GetNode<Player>("Players/Player1");
 			_player2 = GetNode<Player>("Players/Player2");
 
 			_player1.Initialize(eifel.Instance());
-			_player2.Initialize(eifel.Instance());
+			_player2.Initialize(redentor.Instance());
 
 			var hud = GetNode<Hud>("Hud");
 			hud.StartBattle(_player1, _player2, 90);
@@ -44,6 +45,11 @@ namespace BattleTowers
 			if (Input.IsKeyPressed((int) KeyList.P))
 			{
 				_player1.Attack(Attack.Kick);
+			}
+			
+			if (Input.IsKeyPressed((int) KeyList.Space))
+			{
+				_player1.Jump();
 			}
 		}
 	}

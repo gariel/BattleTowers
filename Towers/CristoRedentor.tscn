@@ -1,0 +1,653 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Towers/CristoRedentor.cs" type="Script" id=1]
+[ext_resource path="res://assets/images/redentor/cristo_redentor_front.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 61.9715, 47.8683 )
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 63.4664, 214.419 )
+
+[sub_resource type="Animation" id=12]
+resource_name = "combo_sky"
+length = 0.7
+step = 0.02
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body/Skeleton2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Body/Skeleton2D:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Body/Skeleton2D/Root/Center/Chest/RightShoulder/RightForearm/RightArm:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.6, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -4.48985, 45.4597 ), Vector2( -31.3986, 184.208 ), Vector2( -31.3986, 184.208 ), Vector2( -4.48985, 45.4597 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Body/Skeleton2D/Root/Center/Chest/RightShoulder/RightForearm/RightArm:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.1, 0.6, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 3, 3 ), Vector2( 3, 3 ), Vector2( 1, 1 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Body/Area2D/CollisionShape2D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.1, 0.6, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 97.5434, -154.649 ), Vector2( 239.655, -131.103 ), Vector2( 239.655, -131.103 ), Vector2( 97.5434, -154.649 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Body/Area2D/CollisionShape2D:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.02, 0.66 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Body/Skeleton2D/Root/Center/Chest/LeftShoulder/LeftForearm/LeftArm:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.1, 0.6, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 5.61232, -57.8068 ), Vector2( -13.7283, -152.828 ), Vector2( -13.7283, -152.828 ), Vector2( 5.61232, -57.8068 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Body/Skeleton2D/Root/Center/Chest/LeftShoulder/LeftForearm/LeftArm:scale")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 0.1, 0.6, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 3, 3 ), Vector2( 3, 3 ), Vector2( 1, 1 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Body:scale")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 0.2, 0.34, 0.5, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( -1, 1 ), Vector2( 1, 1 ), Vector2( -1, 1 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "idle"
+length = 0.5
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body/Skeleton2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Body/Skeleton2D:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Body/Skeleton2D/Root/Center/Chest:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 75.2049, 0.561218 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Body/Skeleton2D/Root/Center/Chest:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Body/Skeleton2D/Root/Center/Chest/LeftShoulder:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 7.85724, -41.5311 ), Vector2( -8.66057, -43.8908 ), Vector2( 7.85724, -41.5311 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Body/Skeleton2D/Root/Center/Chest/LeftShoulder:rotation_degrees")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 0.0 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Body/Skeleton2D/Root/Center/Chest/RightShoulder:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 3.9286, 34.7963 ), Vector2( -10.2295, 35.7401 ), Vector2( 3.9286, 34.7963 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Body/Skeleton2D/Root/Center/Chest/RightShoulder:rotation_degrees")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 0.0 ]
+}
+
+[sub_resource type="Animation" id=13]
+resource_name = "jump"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body/Skeleton2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Body/Skeleton2D:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Body/Skeleton2D/Root/Thighs:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -79.0059, 1.66599 ), Vector2( -115.871, 0.476784 ), Vector2( -79.0059, 1.66599 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Body/Skeleton2D/Root/Thighs/Legs:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -127.844, 6.68176 ), Vector2( -130.222, 3.11413 ), Vector2( -127.844, 6.68176 ) ]
+}
+
+[sub_resource type="Animation" id=11]
+resource_name = "kick"
+length = 0.3
+step = 0.02
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body/Skeleton2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Body/Skeleton2D:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Body/Area2D/CollisionShape2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -0.000595093, 148.915 ), Vector2( 216.951, 68.189 ), Vector2( -0.000595093, 148.915 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Body/Area2D/CollisionShape2D:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.02, 0.26 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Body/Skeleton2D/Root/Thighs:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.1, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -79.0059, 1.66599 ), Vector2( -54.6198, 100.892 ), Vector2( -79.0059, 1.66599 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Body/Skeleton2D/Root/Thighs/Legs:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.1, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -127.844, 6.68176 ), Vector2( -31.1409, 126.93 ), Vector2( -127.844, 6.68176 ) ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "punch"
+length = 0.3
+step = 0.02
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body/Skeleton2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Body/Skeleton2D:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Body/Skeleton2D/Root/Center/Chest/RightShoulder/RightForearm/RightArm:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -4.48985, 45.4597 ), Vector2( -31.3986, 184.208 ), Vector2( -4.48985, 45.4597 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Body/Skeleton2D/Root/Center/Chest/RightShoulder/RightForearm/RightArm:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.1, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 4, 4 ), Vector2( 1, 1 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Body/Area2D/CollisionShape2D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.1, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 97.5434, -154.649 ), Vector2( 239.655, -131.103 ), Vector2( 97.5434, -154.649 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Body/Area2D/CollisionShape2D:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.02, 0.26 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "walk"
+length = 0.5
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body/Skeleton2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Body/Skeleton2D:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Body/Skeleton2D/Root/Center/Chest:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 75.2049, 0.561218 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Body/Skeleton2D/Root/Center/Chest:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Body/Skeleton2D/Root/Center/Chest/LeftShoulder:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 7.85724, -41.5311 ), Vector2( -8.66057, -43.8908 ), Vector2( 7.85724, -41.5311 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Body/Skeleton2D/Root/Center/Chest/LeftShoulder:rotation_degrees")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 0.0 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Body/Skeleton2D/Root/Center/Chest/RightShoulder:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 3.9286, 34.7963 ), Vector2( -10.2295, 35.7401 ), Vector2( 3.9286, 34.7963 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Body/Skeleton2D/Root/Center/Chest/RightShoulder:rotation_degrees")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 0.0 ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Body/Skeleton2D/Root/Thighs/Legs:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 0.1, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -127.844, 6.68176 ), Vector2( -129.526, -17.7042 ), Vector2( -132.469, 23.2895 ), Vector2( -127.844, 6.68176 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Body/Skeleton2D/Root/Thighs/Legs:rotation_degrees")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 0.1, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 0.0, 0.0 ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Body/Skeleton2D/Root/Thighs/Legs:scale")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0, 0.1, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 1, 1 ) ]
+}
+
+[node name="KinematicBody2D" type="KinematicBody2D"]
+script = ExtResource( 1 )
+
+[node name="Body" type="Node2D" parent="."]
+
+[node name="Polygon2D" type="Polygon2D" parent="Body"]
+position = Vector2( -145.25, -242.689 )
+scale = Vector2( 0.632746, 0.632746 )
+texture = ExtResource( 2 )
+skeleton = NodePath("../Skeleton2D")
+polygon = PoolVector2Array( 196.959, 96.9589, 193.381, 99.8211, 188.372, 101.252, 182.648, 102.504, 172.987, 102.683, 166.547, 101.789, 161.717, 101.61, 156.708, 101.789, 150.089, 102.147, 141.86, 101.431, 132.2, 100.894, 124.508, 99.2844, 118.426, 98.39, 114.132, 97.8533, 103.399, 97.1377, 91.771, 96.6011, 87.8354, 98.7478, 83.3631, 98.39, 80.1431, 97.1377, 73.5241, 97.4955, 69.2308, 96.9589, 62.7907, 96.4222, 57.7817, 93.5599, 52.2361, 91.2343, 47.4061, 91.771, 42.0394, 94.2755, 30.0537, 92.6655, 24.508, 91.2343, 20.0358, 90.6977, 12.7013, 90.8766, 7.15563, 92.3077, 7.15563, 96.6011, 13.059, 99.8211, 6.97674, 100.716, 2.86225, 101.61, 2.86225, 105.009, 5.72451, 109.302, 13.9535, 111.449, 13.059, 112.522, 8.94454, 113.238, 7.69231, 117.71, 10.1968, 120.394, 16.1002, 123.077, 26.6547, 124.329, 28.9803, 124.508, 24.6869, 126.655, 21.288, 128.086, 20.7513, 131.306, 24.6869, 133.274, 30.7692, 134.168, 40.2504, 135.42, 50.6261, 135.241, 62.0751, 135.599, 70.6619, 135.42, 74.2397, 138.462, 82.6476, 150.626, 90.8766, 160.823, 99.2844, 173.703, 108.229, 183.721, 118.247, 204.114, 125.224, 218.068, 130.233, 232.2, 134.347, 243.828, 136.852, 252.773, 138.819, 262.075, 140.072, 280.143, 143.649, 295.885, 145.438, 302.504, 145.796, 315.385, 145.617, 332.379, 146.691, 344.186, 146.512, 358.318, 146.869, 373.703, 148.837, 384.079, 150.089, 394.097, 150.805, 408.229, 152.952, 421.825, 153.667, 432.379, 156.708, 449.553, 158.497, 460.107, 158.497, 472.272, 159.034, 485.331, 159.213, 491.771, 160.823, 501.789, 161.181, 510.018, 162.254, 515.742, 165.295, 516.637, 169.41, 513.417, 171.199, 514.669, 172.272, 520.036, 170.125, 526.297, 170.125, 531.843, 170.841, 538.104, 170.841, 546.69, 169.41, 562.254, 168.694, 571.914, 168.157, 583.005, 169.41, 593.023, 170.662, 600.179, 173.345, 606.261, 171.914, 612.343, 171.556, 616.1, 173.524, 620.393, 175.671, 627.728, 174.597, 636.136, 174.24, 649.553, 174.061, 661.717, 174.776, 670.841, 175.492, 681.395, 176.208, 690.698, 178.533, 700, 179.07, 708.945, 180.322, 717.531, 187.835, 718.962, 198.748, 717.531, 214.669, 719.32, 224.329, 717.173, 235.778, 715.563, 249.911, 714.49, 259.392, 714.311, 267.442, 713.953, 277.46, 713.059, 292.308, 714.669, 301.61, 714.132, 304.83, 711.449, 305.188, 701.431, 305.188, 692.308, 306.261, 681.216, 305.903, 670.841, 305.724, 660.286, 306.261, 650.626, 305.724, 638.998, 306.44, 625.939, 306.44, 615.206, 305.188, 600.179, 304.651, 590.161, 305.546, 576.565, 305.367, 564.222, 304.651, 548.837, 308.945, 539.893, 313.059, 531.127, 312.522, 515.921, 311.807, 504.114, 310.018, 494.991, 308.408, 486.762, 308.766, 478.712, 307.692, 470.841, 306.798, 466.011, 305.546, 453.846, 304.83, 442.218, 304.651, 431.843, 305.724, 421.109, 308.766, 411.628, 310.018, 396.243, 311.27, 383.363, 312.701, 371.914, 315.385, 355.814, 315.206, 337.746, 316.1, 322.719, 317.71, 309.123, 318.605, 298.748, 318.605, 287.12, 318.605, 273.524, 318.426, 261.717, 318.426, 250.805, 318.605, 237.209, 317.889, 228.265, 317.352, 219.499, 323.792, 217.889, 333.453, 211.449, 341.324, 204.472, 347.048, 199.106, 354.562, 191.234, 360.644, 185.689, 366.547, 177.639, 371.914, 168.157, 375.671, 159.213, 380.501, 147.943, 383.721, 151.521, 388.909, 154.383, 396.064, 155.814, 401.431, 156.351, 407.513, 157.603, 412.522, 158.14, 418.784, 156.172, 421.467, 152.236, 420.751, 149.732, 426.118, 149.016, 427.391, 145.072, 425.797, 143.333, 431.449, 142.029, 434.638, 138.696, 434.058, 135.797, 431.739, 134.203, 431.449, 130.145, 427.391, 127.536, 423.623, 125.072, 416.087, 124.348, 412.174, 120.58, 407.536, 117.536, 401.739, 116.667, 395.652, 115.507, 385.797, 115.217, 377.101, 115.652, 368.841, 116.377, 358.261, 117.826, 350.87, 118.116, 342.464, 118.261, 336.232, 118.261, 328.261, 117.536, 323.188, 115.942, 316.957, 113.913, 306.667, 113.333, 297.246, 113.333, 286.957, 111.594, 280, 110.435, 271.884, 110.435, 265.942, 110.58, 265.217, 108.841, 268.406, 104.638, 268.696, 91.4493, 267.101, 87.2464, 267.681, 83.1884, 269.565, 78.2609, 271.884, 74.4928, 271.159, 69.1304, 270.145, 65.2174, 272.464, 60, 271.594, 51.5942, 274.638, 46.9565, 275.072, 38.8406, 272.464, 28.6957, 273.913, 25.6522, 274.928, 24.6377, 274.928, 20.4348, 268.986, 15.3623, 260.145, 10.7246, 252.609, 8.26087, 235.507, 2.02899, 228.841, 1.44928, 217.246, 2.6087, 213.333, 3.18841, 207.536, 5.65217, 202.174, 11.5942, 196.667, 24.7826, 191.594, 39.1304, 190.145, 52.3188, 186.087, 64.9275, 179.13, 81.4493, 175.507, 86.087, 176.232, 89.4203, 178.696, 91.5942, 183.188, 89.7102 )
+uv = PoolVector2Array( 196.959, 96.9589, 193.381, 99.8211, 188.372, 101.252, 182.648, 102.504, 172.987, 102.683, 166.547, 101.789, 161.717, 101.61, 156.708, 101.789, 150.089, 102.147, 141.86, 101.431, 132.2, 100.894, 124.508, 99.2844, 118.426, 98.39, 114.132, 97.8533, 103.399, 97.1377, 91.771, 96.6011, 87.8354, 98.7478, 83.3631, 98.39, 80.1431, 97.1377, 73.5241, 97.4955, 69.2308, 96.9589, 62.7907, 96.4222, 57.7817, 93.5599, 52.2361, 91.2343, 47.4061, 91.771, 42.0394, 94.2755, 30.0537, 92.6655, 24.508, 91.2343, 20.0358, 90.6977, 12.7013, 90.8766, 7.15563, 92.3077, 7.15563, 96.6011, 13.059, 99.8211, 6.97674, 100.716, 2.86225, 101.61, 2.86225, 105.009, 5.72451, 109.302, 13.9535, 111.449, 13.059, 112.522, 8.94454, 113.238, 7.69231, 117.71, 10.1968, 120.394, 16.1002, 123.077, 26.6547, 124.329, 28.9803, 124.508, 24.6869, 126.655, 21.288, 128.086, 20.7513, 131.306, 24.6869, 133.274, 30.7692, 134.168, 40.2504, 135.42, 50.6261, 135.241, 62.0751, 135.599, 70.6619, 135.42, 74.2397, 138.462, 82.6476, 150.626, 90.8766, 160.823, 99.2844, 173.703, 108.229, 183.721, 118.247, 204.114, 125.224, 218.068, 130.233, 232.2, 134.347, 243.828, 136.852, 252.773, 138.819, 262.075, 140.072, 280.143, 143.649, 295.885, 145.438, 302.504, 145.796, 315.385, 145.617, 332.379, 146.691, 344.186, 146.512, 358.318, 146.869, 373.703, 148.837, 384.079, 150.089, 394.097, 150.805, 408.229, 152.952, 421.825, 153.667, 432.379, 156.708, 449.553, 158.497, 460.107, 158.497, 472.272, 159.034, 485.331, 159.213, 491.771, 160.823, 501.789, 161.181, 510.018, 162.254, 515.742, 165.295, 516.637, 169.41, 513.417, 171.199, 514.669, 172.272, 520.036, 170.125, 526.297, 170.125, 531.843, 170.841, 538.104, 170.841, 546.69, 169.41, 562.254, 168.694, 571.914, 168.157, 583.005, 169.41, 593.023, 170.662, 600.179, 173.345, 606.261, 171.914, 612.343, 171.556, 616.1, 173.524, 620.393, 175.671, 627.728, 174.597, 636.136, 174.24, 649.553, 174.061, 661.717, 174.776, 670.841, 175.492, 681.395, 176.208, 690.698, 178.533, 700, 179.07, 708.945, 180.322, 717.531, 187.835, 718.962, 198.748, 717.531, 214.669, 719.32, 224.329, 717.173, 235.778, 715.563, 249.911, 714.49, 259.392, 714.311, 267.442, 713.953, 277.46, 713.059, 292.308, 714.669, 301.61, 714.132, 304.83, 711.449, 305.188, 701.431, 305.188, 692.308, 306.261, 681.216, 305.903, 670.841, 305.724, 660.286, 306.261, 650.626, 305.724, 638.998, 306.44, 625.939, 306.44, 615.206, 305.188, 600.179, 304.651, 590.161, 305.546, 576.565, 305.367, 564.222, 304.651, 548.837, 308.945, 539.893, 313.059, 531.127, 312.522, 515.921, 311.807, 504.114, 310.018, 494.991, 308.408, 486.762, 308.766, 478.712, 307.692, 470.841, 306.798, 466.011, 305.546, 453.846, 304.83, 442.218, 304.651, 431.843, 305.724, 421.109, 308.766, 411.628, 310.018, 396.243, 311.27, 383.363, 312.701, 371.914, 315.385, 355.814, 315.206, 337.746, 316.1, 322.719, 317.71, 309.123, 318.605, 298.748, 318.605, 287.12, 318.605, 273.524, 318.426, 261.717, 318.426, 250.805, 318.605, 237.209, 317.889, 228.265, 317.352, 219.499, 323.792, 217.889, 333.453, 211.449, 341.324, 204.472, 347.048, 199.106, 354.562, 191.234, 360.644, 185.689, 366.547, 177.639, 371.914, 168.157, 375.671, 159.213, 380.501, 147.943, 383.721, 151.521, 388.909, 154.383, 396.064, 155.814, 401.431, 156.351, 407.513, 157.603, 412.522, 158.14, 418.784, 156.172, 421.467, 152.236, 420.751, 149.732, 426.118, 149.016, 427.391, 145.072, 425.797, 143.333, 431.449, 142.029, 434.638, 138.696, 434.058, 135.797, 431.739, 134.203, 431.449, 130.145, 427.391, 127.536, 423.623, 125.072, 416.087, 124.348, 412.174, 120.58, 407.536, 117.536, 401.739, 116.667, 395.652, 115.507, 385.797, 115.217, 377.101, 115.652, 368.841, 116.377, 358.261, 117.826, 350.87, 118.116, 342.464, 118.261, 336.232, 118.261, 328.261, 117.536, 323.188, 115.942, 316.957, 113.913, 306.667, 113.333, 297.246, 113.333, 286.957, 111.594, 280, 110.435, 271.884, 110.435, 265.942, 110.58, 265.217, 108.841, 268.406, 104.638, 268.696, 91.4493, 267.101, 87.2464, 267.681, 83.1884, 269.565, 78.2609, 271.884, 74.4928, 271.159, 69.1304, 270.145, 65.2174, 272.464, 60, 271.594, 51.5942, 274.638, 46.9565, 275.072, 38.8406, 272.464, 28.6957, 273.913, 25.6522, 274.928, 24.6377, 274.928, 20.4348, 268.986, 15.3623, 260.145, 10.7246, 252.609, 8.26087, 235.507, 2.02899, 228.841, 1.44928, 217.246, 2.6087, 213.333, 3.18841, 207.536, 5.65217, 202.174, 11.5942, 196.667, 24.7826, 191.594, 39.1304, 190.145, 52.3188, 186.087, 64.9275, 179.13, 81.4493, 175.507, 86.087, 176.232, 89.4203, 178.696, 91.5942, 183.188, 89.7102 )
+bones = [ NodePath("Root"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.5, 0.5, 0.5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("Root/Center"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("Root/Center/Chest"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("Root/Center/Chest/RightShoulder"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("Root/Center/Chest/RightShoulder/RightForearm"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("Root/Center/Chest/RightShoulder/RightForearm/RightArm"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("Root/Center/Chest/LeftShoulder"), PoolRealArray( 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5, 0.5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("Root/Center/Chest/LeftShoulder/LeftForearm"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("Root/Center/Chest/LeftShoulder/LeftForearm/LeftArm"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("Root/Center/Chest/Head"), PoolRealArray( 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ), NodePath("Root/Thighs"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 1, 1, 0.5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("Root/Thighs/Legs"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ) ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Skeleton2D" type="Skeleton2D" parent="Body"]
+
+[node name="Root" type="Bone2D" parent="Body/Skeleton2D"]
+position = Vector2( 1.18921, -0.594604 )
+rotation = -1.5708
+rest = Transform2D( -4.37114e-08, -1, 1, -4.37114e-08, 1.18921, -0.594604 )
+
+[node name="Center" type="Bone2D" parent="Body/Skeleton2D/Root"]
+position = Vector2( 80.8173, -6.10352e-05 )
+rest = Transform2D( 1, 0, 0, 1, 80.8173, -6.10352e-05 )
+
+[node name="Chest" type="Bone2D" parent="Body/Skeleton2D/Root/Center"]
+position = Vector2( 75.2049, 0.561218 )
+rest = Transform2D( 1, 0, 0, 1, 75.2049, 0.561218 )
+
+[node name="RightShoulder" type="Bone2D" parent="Body/Skeleton2D/Root/Center/Chest"]
+position = Vector2( 3.9286, 34.7963 )
+rest = Transform2D( 1, 0, 0, 1, 3.9286, 34.7963 )
+
+[node name="RightForearm" type="Bone2D" parent="Body/Skeleton2D/Root/Center/Chest/RightShoulder"]
+position = Vector2( -1.12247, 27.5003 )
+rest = Transform2D( 1, 0, 0, 1, -1.12247, 27.5003 )
+
+[node name="RightArm" type="Bone2D" parent="Body/Skeleton2D/Root/Center/Chest/RightShoulder/RightForearm"]
+position = Vector2( -4.48985, 45.4597 )
+rest = Transform2D( 1, 0, 0, 1, -4.48985, 45.4597 )
+
+[node name="LeftShoulder" type="Bone2D" parent="Body/Skeleton2D/Root/Center/Chest"]
+position = Vector2( 7.85724, -41.5311 )
+rest = Transform2D( 1, 0, 0, 1, 7.85724, -41.5311 )
+
+[node name="LeftForearm" type="Bone2D" parent="Body/Skeleton2D/Root/Center/Chest/LeftShoulder"]
+position = Vector2( 0, -27.5003 )
+rest = Transform2D( 1, 0, 0, 1, 0, -27.5003 )
+
+[node name="LeftArm" type="Bone2D" parent="Body/Skeleton2D/Root/Center/Chest/LeftShoulder/LeftForearm"]
+position = Vector2( 5.61232, -57.8068 )
+rest = Transform2D( 1, 0, 0, 1, 5.61232, -57.8068 )
+
+[node name="Head" type="Bone2D" parent="Body/Skeleton2D/Root/Center/Chest"]
+position = Vector2( 66.2164, 1.05945 )
+rest = Transform2D( 1, 0, 0, 1, 66.2164, 1.05945 )
+
+[node name="Thighs" type="Bone2D" parent="Body/Skeleton2D/Root"]
+position = Vector2( -79.0059, 1.66599 )
+rest = Transform2D( 1, 0, 0, 1, -79.0059, 1.66599 )
+
+[node name="Legs" type="Bone2D" parent="Body/Skeleton2D/Root/Thighs"]
+position = Vector2( -127.844, 6.68176 )
+rest = Transform2D( 1, 0, 0, 1, -127.844, 6.68176 )
+
+[node name="Area2D" type="Area2D" parent="Body"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Body/Area2D"]
+position = Vector2( 97.5434, -154.649 )
+shape = SubResource( 7 )
+disabled = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/combo_sky = SubResource( 12 )
+anims/idle = SubResource( 8 )
+anims/jump = SubResource( 13 )
+anims/kick = SubResource( 11 )
+anims/punch = SubResource( 10 )
+anims/walk = SubResource( 9 )

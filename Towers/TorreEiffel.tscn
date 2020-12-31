@@ -97,7 +97,7 @@ tracks/6/keys = {
 }
 
 [sub_resource type="Animation" id=3]
-length = 0.5
+length = 0.2
 step = 0.05
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:position")
@@ -106,10 +106,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.25, 0.5 ),
+"times": PoolRealArray( 0, 0.1, 0.2 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( -1.05951, -29.665 ), Vector2( -1.05951, -14.3028 ), Vector2( -1.05951, -29.665 ) ]
+"values": [ Vector2( -1.05951, -29.665 ), Vector2( -1.05951, -7.95587 ), Vector2( -1.05951, -29.665 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Sprite:scale")
@@ -118,10 +118,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.25, 0.5 ),
+"times": PoolRealArray( 0, 0.1, 0.2 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0.2, 0.2 ), Vector2( 0.2, 0.187611 ), Vector2( 0.2, 0.2 ) ]
+"values": [ Vector2( 0.2, 0.2 ), Vector2( 0.2, 0.217507 ), Vector2( 0.2, 0.2 ) ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -296,7 +296,6 @@ texture = ExtResource( 3 )
 
 [node name="Sprite2" type="Sprite" parent="Sprite"]
 position = Vector2( 20, 9.99998 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
