@@ -26,6 +26,8 @@ namespace BattleTowers
 		private bool _facingLeft;
 		private bool _attacking;
 		private List<(DateTime, Attack)> AttacksForCombo;
+		private KinematicBody2D _kinematic;
+		private float _gravity = 10f;
 
 		public Player()
 		{
@@ -35,6 +37,7 @@ namespace BattleTowers
 		public void Initialize(Node playable)
 		{
 			AddChild(playable);
+			_kinematic = (KinematicBody2D) playable;
 			_tower = (ITower) playable;
 			_tower.Anim.Play("idle");
 			_tower.Anim.Connect("animation_finished", this, nameof(AnimationFinished));
@@ -43,7 +46,13 @@ namespace BattleTowers
 		public override void _Ready()
 		{
 		}
-	
+
+		public override void _Process(float delta)
+		{
+			_gravity = Math.Min(_gravity + 1f * delta, 10f);
+			_kinematic.MoveAndSlide(new Vector2(0, _gravity));
+		}
+
 		public void Walk()
 		{
 			if (_attacking) return;

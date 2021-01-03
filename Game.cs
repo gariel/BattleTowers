@@ -15,8 +15,8 @@ namespace BattleTowers
 			_player1 = GetNode<Player>("Players/Player1");
 			_player2 = GetNode<Player>("Players/Player2");
 
-			_player1.Initialize(eifel.Instance());
-			_player2.Initialize(redentor.Instance());
+			// _player1.Initialize(eifel.Instance()); _player2.Initialize(redentor.Instance());
+			_player1.Initialize(redentor.Instance()); _player2.Initialize(eifel.Instance());
 
 			var hud = GetNode<Hud>("Hud");
 			hud.StartBattle(_player1, _player2, 90);
